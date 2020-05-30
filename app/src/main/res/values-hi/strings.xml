@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidLabs</string>
+    <string name="hello_message">मेरे जीयूआई को देखो</string>
+    <string name="ButtonText">यहाँ क्लिक करें</string>
+    <string name="checkboxtext">इसकी जांच करें!</string>
+    <string name="switch_on_off">चालू करना / बंद करना</string>
+    <string name="hinttext">यहा लिखो</string>
+    <string name="toast_message">यहाँ अधिक जानकारी है</string>
+</resources>
