@@ -4,7 +4,10 @@
     <string name="message">मेरे जीयूआई को देखो</string>
     <string name="ButtonText">यहाँ क्लिक करें</string>
     <string name="checkboxtext">इसकी जांच करें!</string>
-    <string name="switch_on_off">चालू करना / बंद करना</string>
+    <string name="switch_on_off">चालू / बंद </string>
     <string name="hinttext">यहा लिखो</string>
     <string name="toast_message">यहाँ अधिक जानकारी है</string>
+    <string name="snackbar_on">स्विच अभी चालू है!</string>
+    <string name="snackbar_off">स्विच अभी बंद है!</string>
+    <string name="Undo">पूर्ववत</string>
 </resources>
