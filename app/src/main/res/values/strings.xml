@@ -6,4 +6,7 @@
     <string name="switch_on_off">Switch on/off</string>
     <string name="hinttext">Type here</string>
     <string name="toast_message">Here is more information</string>
+    <string name="snackbar_on">The Switch is on now!</string>
+    <string name="snackbar_off">The Switch is off now!</string>
+    <string name="Undo">Undo</string>
 </resources>
