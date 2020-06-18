@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AndroidLabs</string>
-    <string name="message">मेरे जीयूआई को देखो</string>
-    <string name="ButtonText">यहाँ क्लिक करें</string>
-    <string name="checkboxtext">इसकी जांच करें!</string>
-    <string name="switch_on_off">चालू / बंद </string>
-    <string name="hinttext">यहा लिखो</string>
-    <string name="toast_message">यहाँ अधिक जानकारी है</string>
-    <string name="snackbar_on">स्विच अभी चालू है!</string>
-    <string name="snackbar_off">स्विच अभी बंद है!</string>
-    <string name="Undo">पूर्ववत</string>
+    <string name="message">अपना ईमेल पता दर्ज करें:</string>
+    <string name="ButtonText">लॉग इन करें</string>
+    <string name="hinttext">यहां ईमेल लिखें</string>
+    <string name ="TypePass">अपना पासवर्ड टाइप करें:</string>
+    <string name="hinttext2" />
+<!--    <string name="checkboxtext">इसकी जांच करें!</string>-->
+<!--    <string name="switch_on_off">चालू / बंद </string>-->
+
+<!--    <string name="toast_message">यहाँ अधिक जानकारी है</string>-->
+<!--    <string name="snackbar_on">स्विच अभी चालू है!</string>-->
+<!--    <string name="snackbar_off">स्विच अभी बंद है!</string>-->
+<!--    <string name="Undo">पूर्ववत</string>-->
+
+    <string name="yourProfile">"आपकी रूपरेखा"</string>
+    <string name="name">"आपका नाम:"</string>
+    <string name="hinttext3">अपना नाम दर्ज करें:</string>
+    <string name="email">तुम्हारा ईमेल:</string>
+    <string name="hinttext4">अपना ईमेल दर्ज करें</string>
+    <string name="pic">आपकी तस्वीर:</string>
+
 </resources>

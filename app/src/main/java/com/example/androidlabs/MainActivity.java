@@ -1,50 +1,74 @@
 package com.example.androidlabs;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
-
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences prefs = null;
+    private EditText editMail;
+    private EditText editPass;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_linear);
 
-        EditText object = findViewById(R.id.edit);
+        editMail = findViewById(R.id.editemail);
+        editPass = findViewById(R.id.editpassword);
+        btn = findViewById(R.id.button);
 
-        Button ob0 = findViewById(R.id.button);
-        ob0.setOnClickListener(obj ->Toast.makeText(MainActivity.this,getString(R.string.toast_message),Toast.LENGTH_LONG).show());
+        prefs = getSharedPreferences("Karan_Lab_3", MODE_PRIVATE);
+        String email = prefs.getString("email", "");
+        editMail.setText(email);
 
-        CheckBox ob1 = findViewById(R.id.checkBox);
-        ob1.setOnCheckedChangeListener(( buttonView, isChecked)-> {
-            if(isChecked){
-                Snackbar.make(ob1,getString(R.string.snackbar_on), BaseTransientBottomBar.LENGTH_LONG).setAction((R.string.Undo), click -> buttonView.setChecked(!isChecked)).show();
-            }
-            else{
-                Snackbar.make(ob1,getString(R.string.snackbar_off), BaseTransientBottomBar.LENGTH_LONG).setAction((R.string.Undo), click -> buttonView.setChecked(!isChecked)).show();
-            }
+        btn.setOnClickListener( click -> {
+            Intent goToProfile = new Intent(this, ProfileActivity.class);
+            goToProfile.putExtra("EMAIL", editMail.getText().toString());
+            startActivityForResult(goToProfile, 9);
         });
+//        Intent nextPage = new Intent(this, ProfileActivity.class);
+//        btn.setOnClickListener( click -> startActivity( nextPage ));
+    }
 
-        Switch ob2 = findViewById(R.id.sswitch);
-        ob2.setOnCheckedChangeListener((bv, isC) ->{
-            if(isC){
-                Snackbar.make(ob2,getString(R.string.snackbar_on), BaseTransientBottomBar.LENGTH_LONG).setAction((R.string.Undo), click -> bv.setChecked(!isC)).show();
-            }
-            else{
-                Snackbar.make(ob2,getString(R.string.snackbar_off), BaseTransientBottomBar.LENGTH_LONG).setAction((R.string.Undo), click -> bv.setChecked(!isC)).show();
-            }
-        });
+    @Override
+    protected void onPause() {
+        super.onPause();
+        prefs = getSharedPreferences("Karan_Lab_3", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("email", editMail.getText().toString());
+        editor.commit();
+//        super.onPause();
+//        prefs = getSharedPreferences("NewFile", Context.MODE_PRIVATE);
+//        String savedString = prefs.getString("ReserveName", "");
+//        EditText typeField = findViewById(R.id.editemail);
+//        typeField.setText(savedString);
+//        Button saveButton = findViewById(R.id.button);
+//        saveButton.setOnClickListener(bt -> onCreate(typeField.getText().toString()));
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_CANCELED){
+            Toast.makeText(this, "You hit the back button", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }
