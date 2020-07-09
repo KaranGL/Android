@@ -9,10 +9,11 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
     private ImageButton imgbtn;
-    private EditText emailedtxt, nameedtxt;
+    private Button chatbtn;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
 
@@ -22,62 +23,36 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        nameedtxt = findViewById(R.id.enterName);
-        emailedtxt =findViewById(R.id.enterEmail);
+        chatbtn = findViewById(R.id.chatbtn);
         imgbtn = findViewById(R.id.imagebtn);
 
-        Intent fromMain = getIntent();
-        String emailtxt = fromMain.getStringExtra("EMAIL");
-        emailedtxt.setText(emailtxt);
-
+        chatbtn.setOnClickListener(click->{
+            Intent GoToChat = new Intent(this, ChatRoomActivity.class);
+            startActivityForResult(GoToChat, 9);
+        });
         imgbtn.setOnClickListener(click -> dispatchTakePictureIntent());
+
     }
 
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        private void dispatchTakePictureIntent() {
+            Log.e(ACTIVITY_NAME, "In function: dispatchTakePictureIntent");
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
         }
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Log.e(ACTIVITY_NAME, "In function: onActivityResult");
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imgbtn.setImageBitmap(imageBitmap);
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+            Log.e(ACTIVITY_NAME, "In function: onActivityResult");
+            if(resultCode==RESULT_CANCELED){
+                Toast.makeText(this, "You hit the back button", Toast.LENGTH_LONG).show();
+            }
+            if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+                Bundle extras = data.getExtras();
+                Bitmap imageBitmap = (Bitmap) extras.get("data");
+                imgbtn.setImageBitmap(imageBitmap);
+            }
         }
-    }
-
-    @Override
-    protected void onStart() {
-        Log.e(ACTIVITY_NAME,"In function: onStart");
-        super.onStart();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.e(ACTIVITY_NAME,"In function: onPause");
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        Log.e(ACTIVITY_NAME,"In function: onResume");
-        super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.e(ACTIVITY_NAME,"In function: onStop");
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.e(ACTIVITY_NAME,"In function: onDestroy");
-        super.onDestroy();
-    }
 }

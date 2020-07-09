@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context=".ProfileActivity" >
 
@@ -11,15 +11,13 @@
         android:id="@+id/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/yourProfile"
-        />
+        android:text="@string/yourProfile" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name"
-        />
+        android:text="@string/name" />
 
     <EditText
         android:id="@+id/enterName"
@@ -32,8 +30,7 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/message"
-        />
+        android:text="@string/email" />
 
     <EditText
         android:id="@+id/enterEmail"
@@ -46,13 +43,19 @@
         android:id="@+id/pic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pic"
-        />
+        android:text="@string/pic" />
 
     <ImageButton
         android:id="@+id/imagebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/picture_frame"
-    />
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <Button
+        android:id="@+id/chatbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/chatButton" />
+
 </LinearLayout>

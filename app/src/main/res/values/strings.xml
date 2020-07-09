@@ -1,22 +1,15 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
-    <string name="message">Enter your email address:</string>
-    <string name="ButtonText">LOGIN</string>
-    <string name="hinttext">Type email here</string>
-    <string name ="TypePass">Type your password:</string>
-    <string name="hinttext2" />
-<!--    <string name="checkboxtext">Check this out!</string>-->
-<!--    <string name="switch_on_off">Switch on/off</string>-->
-
-<!--    <string name="toast_message">Here is more information</string>-->
-<!--    <string name="snackbar_on">The Switch is on now!</string>-->
-<!--    <string name="snackbar_off">The Switch is off now!</string>-->
-<!--    <string name="Undo">Undo</string>-->
-
+    <string name="message">Hello!</string>
+    <string name="Welcome">Click on this button to demo the lab</string>
     <string name="yourProfile">"Your Profile"</string>
     <string name="name">"Your Name:"</string>
     <string name="hinttext3">Enter your name:</string>
     <string name="email">Your Email:</string>
-    <string name="hinttext4">Enter your email</string>
+    <string name="hinttext">Type email here</string>
     <string name="pic">Your picture:</string>
+    <string name="chatButton">Go to chat</string>
+    <string name="receive">RECEIVE</string>
+    <string name="type">Type here</string>
+    <string name="send">SEND</string>
 </resources>
