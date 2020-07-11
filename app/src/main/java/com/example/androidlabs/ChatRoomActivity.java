@@ -1,11 +1,10 @@
 package com.example.androidlabs;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AlertDialog.Builder;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
+import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +23,10 @@ public class ChatRoomActivity extends AppCompatActivity {
     private ListView msgList;
     public static final String ACTIVITY_NAME = "CHAT_ROOM_ACTIVITY";
     Message msg;
+    SQLiteDatabase db;
+    ContentValues cv = new ContentValues();
+    MyListAdapter adpter = new MyListAdapter();
+    MyOpener dbopen = new MyOpener(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,33 +34,42 @@ public class ChatRoomActivity extends AppCompatActivity {
         Log.e(ACTIVITY_NAME,"In function: onCreate");
         setContentView(R.layout.activity_chat_room);
 
+        dbopen = new MyOpener(this);
+
         msgList = findViewById(R.id.theListView);
         sendbtn = findViewById(R.id.sendbtn);
         receivebtn = findViewById(R.id.receivebtn);
         txt = findViewById(R.id.input);
 
-        MyListAdapter adpter = new MyListAdapter();
         msgList.setAdapter(adpter);
 
+        if(dbopen.count()>0){
+            messages = (ArrayList<Message>) dbopen.read();
+            adpter.notifyDataSetChanged();
+        }
         sendbtn.setOnClickListener(click-> {
-            adpter.setMessage(new Message(txt.getText().toString(), true));
+            Message message = new Message(txt.getText().toString(), true);
+            adpter.setMessage(message);
+            dbopen.insertMessage(message);
             txt.setText("");
         });
 
         receivebtn.setOnClickListener(click-> {
-            adpter.setMessage(new Message(txt.getText().toString(), false));
+            Message message = new Message(txt.getText().toString(), false);
+            adpter.setMessage(message);
+            dbopen.insertMessage(message);
             txt.setText("");
         });
 
         msgList.setOnItemLongClickListener((parent, view, position, id) ->{
             AlertDialog.Builder alrt = new AlertDialog.Builder(this);
-            alrt.setTitle("Delete");
-            alrt.setMessage("Do you want to delete this? ");
-            alrt.setMessage("The selected row is: "+position+"\n The database ID is:"+id)
+            alrt.setTitle("DELETE");
+            alrt.setMessage("Do you want to delete this? ")
                     .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             messages.remove(position);
+                            dbopen.delete(id);
                             adpter.notifyDataSetChanged();
                         }
                     }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -86,7 +98,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         @Override
         public long getItemId(int position) {
             Log.e(ACTIVITY_NAME,"In function: getItemId");
-            return 0;
+            return messages.get(position).getId();
         }
 
         public void setMessage(Message message){
@@ -100,11 +112,6 @@ public class ChatRoomActivity extends AppCompatActivity {
             Log.e(ACTIVITY_NAME, "In function: getView");
             msg = messages.get(position);
             View newView = old;
-            //make a new row:
-            //set what the text should be for this row:
-            //                TextView tView = newView.findViewById(R.id.textGoesHere);
-            //                tView.setText(getItem(position).toString());
-            //return it to be put in the table
             if (msg.isSide())
                 newView = getLayoutInflater().inflate(R.layout.send_layout, parent, false);
             else

@@ -1,20 +1,33 @@
 package com.example.androidlabs;
 
-public class Message {
-    private boolean theSide;
-    private String theMessage;
+public class Message
+{
+    private String message;
+    private boolean side;
+    private long id;
 
-    public Message(String theMessage, boolean theSide)
+    public Message(String message, boolean side)
     {
-        this.theSide = theSide;
-        this.theMessage = theMessage;
+        this.message = message;
+        this.side = side;
     }
 
-    public boolean isSide(){
-        return theSide;
+    public Message(String message, boolean side, long id)
+    {
+        this.message = message;
+        this.side = side;
+        this.id = id;
     }
 
-    public String getMessage(){
-        return theMessage;
+    public String getMessage() {
+        return message;
+    }
+
+    public boolean isSide() {
+        return side;
+    }
+
+    public long getId() {
+        return id;
     }
 }
