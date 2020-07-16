@@ -13,4 +13,9 @@
     <string name="receive">प्राप्त करना</string>
     <string name="type">यहा लिखो</string>
     <string name="send">भेजें</string>
+    <string name="weather">मौसम का पता लगायें</string>
+    <string name="currentText">वर्तमान तापमान:</string>
+    <string name="minText">न्यूनतम तापमान:</string>
+    <string name="maxText">अधिकतम तापमान:</string>
+    <string name="UVText">यूवी मान:</string>
 </resources>

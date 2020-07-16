@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btn;
+    private Button btn, btn2;
     public static final String ACTIVITY_NAME = "MAIN_ACTIVITY";
 
     @Override
@@ -23,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener( click -> {
             Intent goToProfile = new Intent(this, ProfileActivity.class);
             startActivityForResult(goToProfile, 9);
+        });
+
+        btn2 = findViewById(R.id.button2);
+        btn2.setOnClickListener( click->{
+            Intent weather = new Intent(this, WeatherForecast.class);
+            startActivityForResult(weather, 9);
         });
     }
 

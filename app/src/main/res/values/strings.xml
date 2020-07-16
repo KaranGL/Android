@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
     <string name="message">Hello!</string>
-    <string name="Welcome">Click on this button to demo the lab</string>
+    <string name="Welcome">Go to Chat</string>
     <string name="yourProfile">"Your Profile"</string>
     <string name="name">"Your Name:"</string>
     <string name="hinttext3">Enter your name:</string>
@@ -12,4 +12,9 @@
     <string name="receive">RECEIVE</string>
     <string name="type">Type here</string>
     <string name="send">SEND</string>
+    <string name="weather">Check the Weather</string>
+    <string name="currentText">Current Temperature:</string>
+    <string name="minText">Minimum Temperature:</string>
+    <string name="maxText">Maximum Temperature:</string>
+    <string name="UVText">UV value:</string>
 </resources>
