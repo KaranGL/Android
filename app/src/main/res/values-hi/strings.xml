@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AndroidLabs</string>
-    <string name="message">अपना ईमेल पता दर्ज करें:</string>
+    <string name="message">नाम</string>
     <string name="Welcome">लैब को डेमो करने के लिए इस बटन पर क्लिक करें</string>
     <string name="yourProfile">"आपकी रूपरेखा"</string>
     <string name="name">"आपका नाम:"</string>
@@ -18,4 +18,7 @@
     <string name="minText">न्यूनतम तापमान:</string>
     <string name="maxText">अधिकतम तापमान:</string>
     <string name="UVText">यूवी मान:</string>
+    <string name="TypePass">ईमेल:</string>
+    <string name="hinttext2">यहां ईमेल टाइप करें</string>
+    <string name="ButtonText">लॉग इन करें</string>
 </resources>

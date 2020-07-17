@@ -6,27 +6,64 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:gravity="center">
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp" >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/message"/>
+            android:text="@string/message" />
+
+        <EditText
+            android:id="@+id/editemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hinttext3"
+            android:inputType="textPersonName"
+            android:nextFocusDown="@id/item1"
+            android:nextFocusUp="@id/item2"
+            android:nextFocusRight="@id/item3"
+            android:nextFocusLeft="@id/item4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/TypePass" />
+
+        <EditText
+            android:id="@+id/editpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hinttext2"
+            android:inputType="textPassword"
+            android:nextFocusDown="@id/item1"
+            android:nextFocusUp="@id/item2"
+            android:nextFocusRight="@id/item3"
+            android:nextFocusLeft="@id/item4" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/Welcome" />
+            android:layout_gravity="center"
+            android:text="@string/Welcome"
+            android:nextFocusDown="@id/item1"
+            android:nextFocusUp="@id/item2"
+            android:nextFocusRight="@id/item3"
+            android:nextFocusLeft="@id/item4"/>
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/weather" />
+            android:layout_gravity="center"
+            android:text="@string/weather"/>
+            android:nextFocusDown="@id/item1"
+            android:nextFocusUp="@id/item2"
+            android:nextFocusRight="@id/item3"
+            android:nextFocusLeft="@id/item4"/>
 </LinearLayout>
 
 

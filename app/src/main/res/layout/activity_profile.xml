@@ -5,7 +5,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".ProfileActivity" >
+    tools:context=".ProfileActivity"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp"
+    >
 
     <TextView
         android:id="@+id/profile"
@@ -24,7 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hinttext3"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:nextFocusDown="@id/item1"
+        android:nextFocusUp="@id/item2"
+        android:nextFocusRight="@id/item3"
+        android:nextFocusLeft="@id/item4"/>
 
     <TextView
         android:id="@+id/email"
@@ -37,7 +46,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hinttext"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:nextFocusDown="@id/item1"
+        android:nextFocusUp="@id/item2"
+        android:nextFocusRight="@id/item3"
+        android:nextFocusLeft="@id/item4"/>
 
     <TextView
         android:id="@+id/pic"
@@ -56,6 +69,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/chatButton" />
+        android:text="@string/chatButton"
+        android:nextFocusDown="@id/item1"
+        android:nextFocusUp="@id/item2"
+        android:nextFocusRight="@id/item3"
+        android:nextFocusLeft="@id/item4"/>
 
 </LinearLayout>

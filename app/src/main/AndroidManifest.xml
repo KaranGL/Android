@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidlabs">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.androidlabs"
+    tools:ignore="MissingLeanbackLauncher">
 
-    <uses-feature
-        android:name="android.hardware.camera2"
-        android:required="true" />
+
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.software.leanback" android:required="true"/>
+
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,7 +18,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:banner="@drawable/flag">
         <activity android:name=".WeatherForecast"></activity>
         <activity android:name=".ChatRoomActivity" />
         <activity android:name=".ProfileActivity" />
