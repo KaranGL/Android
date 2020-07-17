@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherForecast">
+
+    <TextView
+        android:id="@+id/blank1"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_toRightOf="@+id/blank1"
+        android:id="@+id/weatherImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@+id/weatherImage"
+        android:id="@+id/currentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/currentText"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@+id/weatherImage"
+        android:layout_toRightOf="@+id/currentText"
+        android:id="@+id/currentTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@+id/currentText"
+        android:id="@+id/minText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minText"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@id/currentTemp"
+        android:id="@+id/minTemp"
+        android:layout_toRightOf="@+id/minText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@+id/minText"
+        android:id="@+id/maxText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/maxText"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@+id/minTemp"
+        android:id="@+id/maxTemp"
+        android:layout_toRightOf="@+id/maxText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@+id/maxText"
+        android:id="@+id/UVText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/UVText"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_below="@+id/maxTemp"
+        android:id="@+id/UV"
+        android:layout_toRightOf="@id/UVText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <ProgressBar
+        android:layout_below="@+id/UV"
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_gravity="center"/>
+
+</RelativeLayout>

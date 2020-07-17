@@ -5,6 +5,7 @@
     <uses-feature
         android:name="android.hardware.camera2"
         android:required="true" />
+    <uses-feature android:name="android.hardware.type.watch"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
 
