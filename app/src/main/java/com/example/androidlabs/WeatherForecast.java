@@ -104,7 +104,7 @@ public class WeatherForecast extends AppCompatActivity {
                                 } catch (FileNotFoundException e) {
                                     e.printStackTrace();
                                 }
-                                Bitmap bm = BitmapFactory.decodeStream(fis);
+                                image= BitmapFactory.decodeStream(fis);
                             } else {
                                 Log.i("DOWNLOADING IMAGES", filename);
                                 String iconName = xpp.getAttributeValue(null, "icon");
